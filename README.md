@@ -1,15 +1,24 @@
-# Boilerplate Docker Compose - PHP7.2+NGINX
+# Sample PHP7.2 + Nginx Docker Configuration for both Development and Production
 
----
+### Development
 
-## Getting Started
+Starting Development Container
 
 ```bash
-make install
+make dev-start
 ```
 
-## Convert this project to your own
+Stopping the Development Container
 
+```bash
+make dev-stop
 ```
+
+### Production
+
+Starting the Production Container
+
+```bash
+cd docker/prod
 
 ```

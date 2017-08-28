@@ -1,0 +1,22 @@
+version: "2"
+
+services:
+  nginx:
+    image: nginx:1.13
+    volumes_from:
+      - php
+    ports:
+      - "8051:8051"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    environment:
+      ENVIRONMENT: dev
+
+  php:
+    image: php:7.2-rc-fpm
+    ports:
+      - "9000:9000"
+    volumes:
+      - ../../public:/var/www/public
+      - ../../src:/var/www/src
+      - ../../vendor:/var/www/vendor

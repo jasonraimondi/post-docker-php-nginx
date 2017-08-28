@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+  nginx:
+    build: ./nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes_from:
+      - php-fpm
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./data/letsencrypt:/etc/letsencrypt
+      - ./data/certs:/etc/certs
+    environment:
+      ENVIRONMENT: dev
+
+  php-fpm:
+    build: ./php-fpm
+    ports:
+      - "9000:9000"
+    volumes:
+      - ../../public:/var/www/public
+      - ../../src:/var/www/src
+      - ../../vendor:/var/www/vendor

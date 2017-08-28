@@ -1,0 +1,28 @@
+{
+    "name": "jmondi/blog-docker-php-nginx",
+    "description": "A sample project for a blog post on jasonraimondi.com",
+    "license": "IDGAF",
+    "authors": [
+        {
+            "name": "Jason Raimondi",
+            "email": "jason@raimondi.us"
+        }
+    ],
+    "require": {
+        "composer/installers": "~1.0",
+        "php": ">=7.1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "6.2.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jmondi\\Blog\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Jmondi\\Blog\\Test\\": "tests"
+        }
+    }
+}

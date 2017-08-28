@@ -1,7 +1,7 @@
 default: build
 
 ssl-cert:
-	docker run -ti --volumes-from prod_nginx_1 certbot/certbot certonly --webroot -w /var/www/public -d www.jasonraimondi.com -d jasonraimondi.com --email jason@raimondi.us --agree-tos
+	docker run -ti --volumes-from prod_nginx_1 certbot/certbot certonly --webroot -w /var/www/public -d $PUT_YOUR_DOMAIN_HERE --email $PUT_YOUR_EMAIL --agree-tos
 
 reload-nginx:
 	docker-compose kill -s HUP nginx
